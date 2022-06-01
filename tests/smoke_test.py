@@ -1,4 +1,4 @@
-
-
-def test_smoke_is_not_risingimport_main_module():
+def test_import_module():
     import pytest_object_getter
+
+    assert pytest_object_getter is not None
