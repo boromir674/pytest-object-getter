@@ -6,7 +6,8 @@ So, why would one opt for this Package?
 
 It is **easy** to *install* (using pip) and intuitive to *use*.
 
-**Pytest Object Getter** features TODO Document
+**Pytest Object Getter** features the 'get_object' pytest fixture
+that arguably simplifies the process of mocking an object present in a namespace.
 
 Well-tested against multiple Python Interpreter versions (3.6 - 3.10),
 tested on both *Linux* (Ubuntu) and *Darwin* (Macos) platforms.

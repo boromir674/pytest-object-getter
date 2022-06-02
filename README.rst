@@ -19,8 +19,9 @@ Features
 
 1. **pytest_object_getter** `python package`
 
-   a. TODO Document a **Great Feature**
-   b. TODO Document another **Nice Feature**
+   a. Dynamically import an object from a module
+   b. Optionally mock any object that is present in the module's namespace
+   c. Construct the mock object at runtime
 2. Tested against multiple `platforms` and `python` versions
 
 
@@ -61,8 +62,52 @@ Using `pip` is the approved way for installing `pytest_object_getter`.
 
     python3 -m pip install pytest_object_getter
 
+Let's see how to write a test and use the 'get_object' fixture to mock
+the `requests.get` method to avoid actual network communication:
 
-TODO Document a use case
+.. code-block:: shell
+
+    python3 -m pip install ask-pypi
+
+.. code-block:: python
+
+    import pytest
+
+    @pytest.fixture
+    def mock_response():
+        def init(self, package_name: str):
+            self.status_code = 200 if package_name == 'existing-package' else 404
+        return type('MockResponse', (), {
+            '__init__': init
+        })
+
+    @pytest.fixture
+    def create_mock_requests(mock_response):
+        def _create_mock_requests():
+            def mock_get(*args, **kwargs):
+                package_name = args[0].split('/')[-1]
+                return mock_response(package_name)
+            return type('MockRequests', (), {
+                'get': mock_get,
+            })
+        return _create_mock_requests
+
+    def test_fixture(get_object, create_mock_requests):
+
+        from ask_pypi import is_pypi_project
+
+        assert is_pypi_project('numpy') == True
+        assert is_pypi_project('pandas') == True
+        assert is_pypi_project('existing-package') == False
+
+        get_object('is_project', 'ask_pypi.pypi_project',
+            overrides={'requests': lambda: create_mock_requests()})
+
+        assert is_pypi_project('existing-package') == True
+
+        assert is_pypi_project('numpy') == False
+        assert is_pypi_project('pandas') == False
+        assert is_pypi_project('so-magic') == False
 
 
 License

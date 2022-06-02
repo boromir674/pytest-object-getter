@@ -22,14 +22,9 @@ def test_fixture(testdir):
             })
         return _create_mock_requests
 
-    @pytest.fixture
-    def mock_ask_pypi(create_mock_requests):
-        def mock_is_project(package_name: str):
-            return package == 'existing-package'
-        return mock_is_project
-
     def test_fixture(get_object, create_mock_requests):
         from ask_pypi import is_pypi_project
+
         _ = get_object('is_project', 'ask_pypi.pypi_project',
             overrides={'requests': lambda: create_mock_requests()})
 
