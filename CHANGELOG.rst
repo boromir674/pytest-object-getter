@@ -2,6 +2,19 @@
 Changelog
 =========
 
+1.0.0 (2022-06-02)
+==================
+
+First release declared stable after being used 'in the wild'!
+
+Changes
+^^^^^^^
+
+build
+"""""
+- add shinxcontrib-spelling dependency in 'docs' extras
+
+
 0.1.0 (2022-06-02)
 ==================
 
