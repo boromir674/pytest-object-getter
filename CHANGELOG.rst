@@ -2,6 +2,17 @@
 Changelog
 =========
 
+1.0.1 (2022-06-02)
+==================
+
+Changes
+^^^^^^^
+
+documentation
+"""""""""""""
+- add supported python versions (using pypi classifiers)
+
+
 1.0.0 (2022-06-02)
 ==================
 
