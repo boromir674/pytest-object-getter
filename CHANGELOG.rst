@@ -2,6 +2,29 @@
 Changelog
 =========
 
+0.1.0 (2022-06-02)
+==================
+
+First `Pytest Object Getter` release!
+
+We provide the *get_object* pytest fixture!
+
+Changes
+^^^^^^^
+
+feature
+"""""""
+- provide fixtures featuring mocking capabilities
+
+documentation
+"""""""""""""
+- document features and usage
+
+build
+"""""
+- add mypy dependency in 'typing' extras
+
+
 0.0.1 (2022-06-01)
 =======================================
 
