@@ -2,6 +2,21 @@
 Changelog
 =========
 
+1.0.2 (2022-07-31)
+==================
+
+Changes
+^^^^^^^
+
+documentation
+"""""""""""""
+- rework readme
+
+ci
+""
+- fix sending test coverage data to codecov.io from github actions
+
+
 1.0.1 (2022-06-02)
 ==================
 

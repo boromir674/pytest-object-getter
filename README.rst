@@ -35,7 +35,7 @@ Highlights
 
   For more, see the `CI Pipeline`_ and the `Test` workflow, defined in `test.yaml`_.
 
-You can read more on pytest and fixtures on `pytest latest documentation`_.
+You can read more on pytest and fixtures in `pytest latest documentation`_.
 
 Quickstart
 ==========
@@ -209,9 +209,9 @@ Here are some useful notes related to doing development on this project.
 
 .. Github Releases & Tags
 
-.. |commits_since_specific_tag_on_master| image:: https://img.shields.io/github/commits-since/boromir674/pytest-object-getter/v1.0.2/master?color=blue&logo=github
+.. |commits_since_specific_tag_on_master| image:: https://img.shields.io/github/commits-since/boromir674/pytest-object-getter/v1.0.1/master?color=blue&logo=github
     :alt: GitHub commits since tagged version (branch)
-    :target: https://github.com/boromir674/pytest-object-getter/compare/v1.0.2..master
+    :target: https://github.com/boromir674/pytest-object-getter/compare/v1.0.1..master
 
 .. |commits_since_latest_github_release| image:: https://img.shields.io/github/commits-since/boromir674/pytest-object-getter/latest?color=blue&logo=semver&sort=semver
     :alt: GitHub commits since latest release (by SemVer)
