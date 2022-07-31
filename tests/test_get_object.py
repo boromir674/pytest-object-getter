@@ -33,7 +33,6 @@ def test_fixture(testdir):
         assert is_pypi_project('numpy') == False
         assert is_pypi_project('pandas') == False
         assert is_pypi_project('so-magic') == False
-
     """
     )
     result = testdir.runpytest("--verbose")

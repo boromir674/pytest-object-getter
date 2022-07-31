@@ -1,6 +1,7 @@
 PYTEST OBJECT GETTER
+====================
 
-Project entirely generated using Generator https://github.com/boromir674/cookiecutter-python-package/
+A Pytest Plugin providing the `get_object` fixture.
 
 .. start-badges
 
@@ -14,53 +15,51 @@ Project entirely generated using Generator https://github.com/boromir674/cookiec
 | **CI:** https://github.com/boromir674/pytest-object-getter/actions/
 
 
-Features
-========
+Highlights
+==========
 
-1. **pytest_object_getter** `python package`
+1. **pytest_object_getter** `python package`, hosted on `pypi.org`_
 
-   a. Dynamically import an object from a module
-   b. Optionally mock any object that is present in the module's namespace
-   c. Construct the mock object at runtime
+   - Installable with `pip`
+   -  `get_object` fixture available to your tests
+
+      1. Dynamically import an object from a module
+      2. Optionally mock any object that is present in the module's namespace
+      3. Construct the mock object at runtime
+      4. Alter the bahaviour of an object at runtime
+
 2. Tested against multiple `platforms` and `python` versions
 
+   - platforms: Ubuntu, MacOS
+   - python: 3.6, 3.7, 3.8, 3.9, 3.10
 
-Development
------------
-Here are some useful notes related to doing development on this project.
+  For more, see the `CI Pipeline`_ and the `Test` workflow, defined in `test.yaml`_.
 
-1. **Test Suite**, using `pytest`_, located in `tests` dir
-2. **Parallel Execution** of Unit Tests, on multiple cpu's
-3. **Documentation Pages**, hosted on `readthedocs` server, located in `docs` dir
-4. **Automation**, using `tox`_, driven by single `tox.ini` file
-
-   a. **Code Coverage** measuring
-   b. **Build Command**, using the `build`_ python package
-   c. **Pypi Deploy Command**, supporting upload to both `pypi.org`_ and `test.pypi.org`_ servers
-   d. **Type Check Command**, using `mypy`_
-   e. **Lint** *Check* and `Apply` commands, using `isort`_ and `black`_
-5. **CI Pipeline**, running on `Github Actions`_, defined in `.github/`
-
-   a. **Job Matrix**, spanning different `platform`'s and `python version`'s
-
-      1. Platforms: `ubuntu-latest`, `macos-latest`
-      2. Python Interpreters: `3.6`, `3.7`, `3.8`, `3.9`, `3.10`
-   b. **Parallel Job** execution, generated from the `matrix`, that runs the `Test Suite`
-
-
-Prerequisites
-=============
-
-You need to have `Python` installed.
+You can read more on pytest and fixtures in `pytest latest documentation`_.
 
 Quickstart
 ==========
+
+Prerequisites
+-------------
+
+You need to have `Python` installed.
+
+
+Installing
+----------
 
 Using `pip` is the approved way for installing `pytest_object_getter`.
 
 .. code-block:: sh
 
     python3 -m pip install pytest_object_getter
+
+
+After installation the `get_object` pytest fixture should be available in your tests.
+
+A Use Case
+----------
 
 Let's see how to write a test and use the 'get_object' fixture to mock
 the `requests.get` method to avoid actual network communication:
@@ -111,18 +110,37 @@ the `requests.get` method to avoid actual network communication:
 
 
 License
-=======
+-------
 
-|gh-lic|
+Free software:
 
 * `GNU Affero General Public License v3.0`_
 
+|gh-lic|
 
-License
-=======
 
-* Free software: GNU Affero General Public License v3.0
+Development
+===========
 
+Here are some useful notes related to doing development on this project.
+
+1. **Test Suite**, using `pytest`_, located in `tests` dir
+2. **Parallel Execution** of Unit Tests, on multiple cpu's
+3. **Documentation Pages**, hosted on `readthedocs` server, located in `docs` dir
+4. **Automation**, using `tox`_, driven by single `tox.ini` file
+
+   a. **Code Coverage** measuring
+   b. **Build Command**, using the `build`_ python package
+   c. **Pypi Deploy Command**, supporting upload to both `pypi.org`_ and `test.pypi.org`_ servers
+   d. **Type Check Command**, using `mypy`_
+   e. **Lint** *Check* and `Apply` commands, using `isort`_ and `black`_
+5. **CI Pipeline**, running on `Github Actions`_, defined in `.github/`
+
+   a. **Job Matrix**, spanning different `platform`'s and `python version`'s
+
+      1. Platforms: `ubuntu-latest`, `macos-latest`
+      2. Python Interpreters: `3.6`, `3.7`, `3.8`, `3.9`, `3.10`
+   b. **Parallel Job** execution, generated from the `matrix`, that runs the `Test Suite`
 
 
 .. LINKS
@@ -147,6 +165,11 @@ License
 
 .. _GNU Affero General Public License v3.0: https://github.com/boromir674/pytest-object-getter/blob/master/LICENSE
 
+.. _test.yaml: https://github.com/boromir674/pytest-object-getter/blob/master/.github/workflows/test.yaml
+
+.. _CI Pipeline: https://github.com/boromir674/pytest-object-getter/actions
+
+.. _pytest latest documentation: https://docs.pytest.org/en/latest/
 
 .. BADGE ALIASES
 
