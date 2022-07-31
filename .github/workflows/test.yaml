@@ -68,28 +68,22 @@ jobs:
         python -m pip install coverage
         tox -e coverage --sitepackages -vv -s false
 
+    - run: pip install coverage[toml]>=5.1
+
+    - name: Send Coverage Data to Codecov
+      uses: codecov/codecov-action@v2
+      with:
+        directory: ./.tox
+        env_vars: OS,PYTHON
+        fail_ci_if_error: true
+        files: ./.tox/coverage.xml
+        flags: unittests
+        name: codecov-umbrella
+        verbose: true
+
     - name: Upload Coverage Data as Artefacts
       uses: actions/upload-artifact@v2
       with:
         name: coverage-xml-data
         path: ./.tox/coverage.xml
         if-no-files-found: error
-
-  host_coverage_results:
-    needs: test_suite
-    runs-on: ubuntu-latest
-    steps:
-    - name: Download Coverage Data
-      uses: actions/download-artifact@v2
-      with:
-        name: coverage-xml-data
-    - name: Send Coverage Data to Codecov
-      uses: codecov/codecov-action@v2
-      with:
-        directory: .
-        env_vars: OS,PYTHON
-        fail_ci_if_error: true
-        files: coverage.xml
-        flags: unittests
-        name: codecov-umbrella
-        verbose: true
