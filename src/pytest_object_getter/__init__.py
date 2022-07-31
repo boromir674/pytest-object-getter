@@ -8,7 +8,6 @@ from .fixtures import (
     object_getter_class,
 )
 
-
 __all__ = [
     'get_object',
     'object_getter_class',
